@@ -5,6 +5,7 @@ require 'bean/nstoolbaritem_additions'
 require 'bean/nsurl_connection_additions'
 require 'bean/nsuserdefaults_additions'
 require 'bean/nsview_additions'
+require 'bean/nsxmlnode_additions'
 
 require 'bean/table_data_source'
 
