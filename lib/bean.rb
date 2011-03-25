@@ -1,3 +1,4 @@
+require 'bean/nsmutableurlrequest_additions'
 require 'bean/nsnotificationcenter_additions'
 require 'bean/nstableview_additions'
 require 'bean/nstextfield_additions'
