@@ -1,9 +1,15 @@
 require 'rake/gempackagetask'
+require 'rake/testtask'
 require 'yard'
 
 spec = eval(File.open("bean.gemspec").read)
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.need_tar = true
+end
+
+Rake::TestTask.new do |t|
+  t.pattern = "test/test_*.rb"
+  t.libs << ['test', 'lib']
 end
 
 desc 'Generate documentation'

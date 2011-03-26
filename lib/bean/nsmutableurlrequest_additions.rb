@@ -13,13 +13,13 @@ class NSMutableURLRequest
   # @option opts [String] :body The body to send with the POST request
   # @option opts [Hash] :head Any headers to send with the request
   # @return [NSMutableURLRequest] The request object
-  def self.post(url, opts)
+  def self.post(url, opts = {})
     req = NSMutableURLRequest.requestWithURL(NSURL.URLWithString(url))
     req.setHTTPMethod('POST')
 
     if opts[:head]
       opts[:head].each_pair do |k, v|
-        req.setValue(v, forHTTPHeaderField:k)
+        req.setValue(v.to_s, forHTTPHeaderField:k.to_s)
       end
     end
 
