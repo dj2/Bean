@@ -1,8 +1,6 @@
 require 'rake/gempackagetask'
 require 'yard'
 
-task :default => [:spec]
-
 spec = eval(File.open("bean.gemspec").read)
 Rake::GemPackageTask.new(spec) do |pkg|
   pkg.need_tar = true
