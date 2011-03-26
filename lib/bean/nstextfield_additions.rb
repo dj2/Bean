@@ -1,3 +1,4 @@
+# Extensions to the NSTextField class
 class NSTextField
   alias to_s stringValue
   alias to_f floatValue

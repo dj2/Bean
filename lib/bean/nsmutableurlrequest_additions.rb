@@ -1,4 +1,18 @@
+# Extensions to the NSMutableRequest class
 class NSMutableURLRequest
+  #
+  # Create a POST request
+  #
+  # @example
+  #   req = NSMutableURLRequest.post("https://example.com",
+  #                                  :body => "foo=1&bar=2&baz=3",
+  #                                  :head => { 'Content-Type' => 'application/x-www-form-urlencoded' })
+  #
+  # @param url [String] The domain to post too
+  # @param opts [Hash] Any options for the post
+  # @option opts [String] :body The body to send with the POST request
+  # @option opts [Hash] :head Any headers to send with the request
+  # @return [NSMutableURLRequest] The request object
   def self.post(url, opts)
     req = NSMutableURLRequest.requestWithURL(NSURL.URLWithString(url))
     req.setHTTPMethod('POST')
