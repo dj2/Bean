@@ -26,4 +26,15 @@ class NSMutableURLRequest
     req.setHTTPBody(opts[:body].to_data) if opts[:body]
     req
   end
+
+  def self.get(url, opts = {})
+    req = NSMutableURLRequest.requestWithURL(NSURL.URLWithString(url))
+
+    if opts[:head]
+      opts[:head].each_pair do |k, v|
+        req.setValue(v.to_s, forHTTPHeaderField:k.to_s)
+      end
+    end
+    req
+  end
 end
